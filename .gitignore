@@ -1,0 +1,5 @@
+# _scripts/
+uv.lock
+.env
+*.mp4
+*.pt
