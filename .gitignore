@@ -2,5 +2,5 @@
 uv.lock
 .env
 *.mp4
-*.pt
+# *.pt
 *.pyc
