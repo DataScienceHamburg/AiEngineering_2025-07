@@ -73,7 +73,6 @@ nest-asyncio==1.6.0
 networkx==3.3
 numpy==1.26.4
 ollama==0.4.8
--e git+https://github.com/langchain-ai/local-deep-researcher.git@5e53626c1280b1bbf51b70ba9738dc8a325bb941#egg=ollama_deep_researcher&subdirectory=..
 openai==1.76.0
 opencv-python==4.11.0.86
 openpyxl==3.1.5

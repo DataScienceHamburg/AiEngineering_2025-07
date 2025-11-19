@@ -105,7 +105,7 @@ class NeuralNetworkFromScratch:
         return "training successfully finished"
     
 #%% Hyper parameters
-LR = 0.1
+LR = 10
 ITERATIONS = 10000
 
 #%% model instance and training
