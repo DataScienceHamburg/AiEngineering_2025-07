@@ -54,8 +54,7 @@ for params in model.parameters():
 
 #%% overwrite classifier of model
 model.classifier = nn.Sequential(OrderedDict([ 
-    ('fc1',nn.Linear(1024,1)), 
-    ('Output',nn.Sigmoid()) 
+    ('fc1',nn.Linear(1024,1))
 ])) 
 model
 
@@ -108,20 +107,19 @@ fig = plt.figure(figsize=(10, 10))
 class_labels = {0:'cat', 1:'dog'} 
 X_test, y_test = next(iter(test_loader)) 
 with torch.no_grad():
-    y_pred = model(X_test) 
-    y_pred = y_pred.round()
-    y_pred = [p.item() for p in y_pred] 
-
+    y_pred_probs = model(X_test) 
+    y_pred_class = torch.round(y_pred_probs)
+    
 # create subplots
 for num, sample in enumerate(X_test): 
     plt.subplot(4,6,num+1) 
-    plt.title(class_labels[y_pred[num]]) 
+    plt.title(class_labels[y_pred_class[num]]) 
     plt.axis('off') 
     sample = sample.cpu().numpy() 
     plt.imshow(np.transpose(sample, (1,2,0))) 
 
 # %% accuracy
-acc = accuracy_score(y_test, y_pred)
+acc = accuracy_score(y_test, y_pred_class)
 print(f"Accuracy Score: {np.round(acc * 100, 2)} %")
 
 # %% 

@@ -4,3 +4,4 @@ uv.lock
 *.mp4
 # *.pt
 *.pyc
+scripts/
